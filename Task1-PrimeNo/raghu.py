@@ -1,4 +1,3 @@
-
 # Function to validate prime
 def chkPrime(num):
     flag_prime = 1
@@ -18,7 +17,6 @@ def chkto10(num):
     return sum
 
 
-@@ -0,0 +1,41 @@
 #Problem task: Create function which determines if it's a primary number and sum of all the digits is equal to 10
 
 import string
