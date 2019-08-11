@@ -7,20 +7,24 @@ class PrimeNoTest(unittest.TestCase):
         pass
 
     def testcheckZero(self):
-        print('test')
+        print('testcheckZero')
         self.assertEqual(isPrime(0), False)
 
     def testNum181(self):
-        print('test')
+        print('testNum181')
         self.assertEqual(isPrime(181), True)
 
     def testNum180(self):
-        print('test')
+        print('testNum180')
         self.assertEqual(isPrime(180), False)
 
     def testNum19(self):
-        print('test')
+        print('testNum19')
         self.assertEqual(isPrime(19), True)
+
+    def testFloat(self):
+        print('testFloat14.5')
+        self.assertEqual(isPrime(14.5), False)
 
 
 if __name__ == '__main__':

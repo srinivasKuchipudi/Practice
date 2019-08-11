@@ -1,5 +1,6 @@
 import math
-
+import logging
+import logging.config
 
 def is_prime(val):
     count = 0
@@ -29,26 +30,49 @@ def number_sum(n):
 
 
 def isPrime(val):
-    if val <= 1 or val == 2:
-        return False
 
-    prime_flag = is_prime(val)
+    msg = ""
+    retFlag = False
+    logging.basicConfig(filename='primeno_app_log.log',level=logging.DEBUG)
+    logger = logging.getLogger()
 
-    if prime_flag:
-        print(str(val) + " is a prime number")
-        tot = number_sum(val)
-        print("total of " + str(val) + " is " + str(tot))
-        if val < 10:
+    try:
+        if isinstance(val, float):
+            logger.warning(str(val) + " is a float, please enter a number")
             return False
-        else:
+
+        if val <= 1 or val == 2:
+            return False
+
+        prime_flag = is_prime(val)
+        valStr = str(val)
+
+        if prime_flag:
+            print(valStr + " is a prime number")
             tot = number_sum(val)
-            if tot == 10:
-                return True
+            logging.info("total of " + str(val) + " is " + str(tot))
+            if val < 10:
+                msg = valStr + " is a prime but not equal to 10"
+                retFlag = False
             else:
-                return False
-    else:
-        print(str(val) + " is not a prime number")
-        return False
+                tot = number_sum(val)
+                if tot == 10:
+                    msg = valStr + " is a prime and equal to 10"
+                    retFlag = True
+                else:
+                    msg = valStr + " is a prime but not equal to 10"
+                    retFlag = False
+        else:
+            msg = valStr + " is not a prime number"
+            retFlag = False
+            print(msg)
+
+    except:
+        logging.error('Unexpected error')
+
+    logger.info(msg)
+
+    return retFlag
 
 
 '''
