@@ -2,13 +2,13 @@
 
 import string
 import logging
-import module_Prime_Identifier as PI
+import module_Prime_Identifier_Vinod as PI
 
 
 
 #intializing logging object
 
-logging.basicConfig(filename="isprime_log.log",level=logging.DEBUG,filemode='w')
+logging.basicConfig(filename="isprime_log_Vinod.log",level=logging.DEBUG,filemode='w')
 logger=logging.getLogger()
 
 
@@ -36,8 +36,9 @@ while (True):
         print("An error occurred. Please check log for more details")
         logger.error("A run-time error occurred: " + str(e))
     if isPrime==True or isPrime==False:
-        logger.info("Program ran successfully. Result: Prime or Sum to 10 for input "+ str(input_num) +" is "+str(isPrime))
-    print("Result: Prime or Sum to 10 for input "+ str(input_num) +" is "+str(isPrime))
+        info_msg="Program ran successfully. Result: Prime and Sum to 10 for input "+ str(input_num) +" is "+str(isPrime)
+        logger.info(info_msg)
+    print(info_msg)
     # if(input_num==1):
     #     print(input_num, "is neither a prime nor a composite")
     # elif (isPrime==1):
