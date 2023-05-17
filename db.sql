@@ -8,8 +8,13 @@ CREATE TABLE candidate (
 
 -- Insert some sample data into the candidate table
 INSERT INTO candidate (id, name, role, education)
-VALUES (1, 'John Smith', 'Developer', 'Computer Science'),
-       (2, 'Jane Doe', 'Designer', 'Graphic Design');
+VALUES (1, 'Srinivas', 'Developer', 'Computer Science'),
+       (2, 'Sridevi', 'Designer', 'Graphic Design'),
+       (3, 'Sunaina', 'Developer', 'Computer Science'),
+       (4, 'Pranaya', 'Tester', 'Electronics'),
+       (5, 'Tarun Raj', 'DBA', 'Computer Science'),
+       (6, 'Tarun Ghanta', 'Developer', 'System Design'),
+       (7, 'Nagasai', 'QA', 'Computer Science');
 
 -- Create the certificate table
 CREATE TABLE certificate (
@@ -21,7 +26,10 @@ CREATE TABLE certificate (
 -- Insert some sample data into the certificate table
 INSERT INTO certificate (id, name, fee)
 VALUES (1, 'Oracle Certified Professional Java SE 11 Developer', 245),
-       (2, 'AWS Certified Solutions Architect - Associate', 150);
+       (2, 'AWS Certified Solutions Architect - Associate', 150),
+       (3, 'AWS Certified Cloud Practitioner', 150),
+       (4, 'Service Now Certification', 200),
+       (5, 'Oracle Java Certification', 175);
 
 -- Create the candidate_certificates table
 CREATE TABLE candidate_certificates (
@@ -37,5 +45,9 @@ CREATE TABLE candidate_certificates (
 INSERT INTO candidate_certificates (candidate_id, certificate_id, on_date)
 VALUES (1, 1, '2022-01-01'),
        (1, 2, '2022-02-01'),
-       (2, 2, '2022-03-01');
+       (2, 2, '2022-03-12'),
+       (2, 2, '2022-05-01'),
+       (3, 1, '2022-04-01'),
+       (3, 2, '2022-03-21'),
+       (4, 5, '2022-03-02');
 
